@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- Bostrap -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!--Diseño de letra-->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> <!-- SweetAlert2 -->
+
+    <style>
+        body {
+            margin: 0px;
+            padding: 0px;
+            color: black;
+            font-family: 'Roboto', sans-serif;
+            box-sizing: border-box;
+        }
+
+        #contenedor {
+            margin: 0px;
+            padding: 0px;
+            max-width: 100vw;
+            min-height: 60vh;
+            background: rgb(218, 215, 215);
+        }
+
+        #encabezado {
+            background: rgb(65, 5, 5);
+            width: auto;
+            height: 220px;
+            border: 5px solid rgb(41, 2, 2);
+        }
+
+        main {
+            background: rgb(218, 215, 215);
+            width: 100vw;
+            margin-top: 30px;
+            margin-left: 50px;
+            margin-right: 50px;
+            color: black;
+        }
+
+        h2 {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        p {
+            color: #263a5e;
+        }
+
+        #containerForm1 {
+            width: auto;
+            height: 850px;
+            background: #142441;
+            border-radius: 15px;
+            color: white;
+            margin: 8px;
+            box-shadow: 0 15px 15px rgba(0, 0, 0, 0.60);
+        }
+
+        #containerForm2 {
+            width: auto;
+            height: auto;
+            background: #142441;
+            border-radius: 15px;
+            color: white;
+            margin: 8px;
+            box-shadow: 0 15px 15px rgba(0, 0, 0, 0.60);
+        }
+
+        #containerForm3 {
+            width: auto;
+            height: auto;
+            background: #142441;
+            border-radius: 15px;
+            color: white;
+            margin: 8px;
+            box-shadow: 0 15px 15px rgba(0, 0, 0, 0.60);
+        }
+
+        form .row {
+            padding: 18px;
+            display: flex;
+            justify-content: center;
+            text-align: left;
+            color: white;
+        }
+
+        form .row .form-text {
+            color: white;
+        }
+
+        #piePagina {
+            background: rgb(65, 5, 5);
+            width: auto;
+            height: 160px;
+            border: 5px solid rgb(41, 2, 2);
+            color: white;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!--Encabezado-->
+    <div class="header text-white" id="encabezado">
+        <div class="row d-flex align-items-center">
+            <div class="col-4 d-flex justify-content-end">
+                <img src="img/logo_club.png" style="width: 200px">
+            </div>
+            <div class="col-5" style="padding-left: 60px;">
+                <h1 class="display-5">Atlético Santander<br>
+                    <h5>club deportivo</h5>
+                </h1>
+            </div>
+            <div class="col-3">
+                <button type="button" class="btn btn-md btn-danger p-3" onclick="cerrarSesion()">
+                    Ir pagina principal</button>
+            </div>
+        </div>
+    </div>
+
+    <!--Contenedor de base -->
+    <div class="container d-flex align-items-center text-black" id="contenedor">
+        <!--Contenedor de informacion-->
+        <main>
+            <!--Informacion principal-->
+            <div class="row text-center m-5">
+                <h2>Bienvenido al Club Deportivo Atlético Santander.</h2>
+                <hr class="border-5 border-dark opacity-50">
+                <p>¡¡Llena el siguiente formulario para ser parte de nuestra familia!!</p>
+                <p>Llena el formulario con información verídica,<br>los datos puestos aquí estarán
+                    <kbd>protegidos.</kbd>
+                </p>
+            </div>
+
+            <!--Formulario-->
+            <div class="row">
+                <div class="row text-center">
+                    <h2 class="my-4">Formulario de Inscripción.</h3>
+                </div>
+
+                <form class="form">
+                    <div class="row">
+                        <!--Formulario 1-->
+                        <div class="col-lg p-5" id="containerForm1">
+                            <!--Tituloh-->
+                            <div class="row text-center text-white">
+                                <h2><a href="#" class="link-danger">Datos Personales</a></h2>
+                            </div>
+
+                            <!--Fila 1-->
+                            <div class="row">
+                                <div class="col-2 col-auto">
+                                    <label class="form-label" for="txtTipoId">Tipo Id</label>
+                                    <select class="form-select" id="txtTipoId" required>
+                                        <option value="">Elige...</option>
+                                        <option value="RC">RC</option>
+                                        <option value="TI">TI</option>
+                                        <option value="CC">CC</option>
+                                        <option value="PAS">PAS</option>
+                                    </select>
+                                </div>
+                                <div class="col-2 col-auto">
+                                    <label class="form-label" for="txtNumeroID">Número ID</label>
+                                    <input type="number" id="txtNumeroID" class="form-control" required
+                                        placeholder="104362789" min="999999" max="9999999999"
+                                        title="Debe ser un número válido.">
+                                </div>
+                            </div>
+
+                            <!--Fila 2-->
+                            <div class="row">
+                                <div class="col-3 col-auto">
+                                    <label class="form-label" for="txtPNombre">Primer Nombre</label>
+                                    <input type="text" id="txtPNombre" class="form-control" required placeholder="Maria"
+                                        pattern="[A-Za-z]{3,15}"
+                                        title="Debe tener entre 3 y 15 letras, sin números ni caracteres especiales.">
+                                </div>
+                                <div class="col-3 col-auto">
+                                    <label class="form-label" for="txtSNombre">Segundo Nombre</label>
+                                    <input type="text" id="txtSNombre" class="form-control" placeholder="Fernanda"
+                                        pattern="[A-Za-z]{3,15}" title="Opcional. Hasta 15 letras.">
+                                </div>
+                                <div class="col-3 col-auto">
+                                    <label class="form-label" for="txtPApellido">Primer Apellido</label>
+                                    <input type="text" id="txtPApellido" class="form-control" required
+                                        placeholder="Hernandez" pattern="[A-Za-z]{3,15}"
+                                        title="Debe tener entre 3 y 15 letras.">
+                                </div>
+                                <div class="col-3 col-auto">
+                                    <label class="form-label" for="txtSapellido">Segundo Apellido</label>
+                                    <input type="text" id="txtSapellido" class="form-control" placeholder="Lopez"
+                                        pattern="[A-Za-z]{3,15}" title="Opcional. Hasta 15 letras.">
+                                </div>
+                            </div>
+
+                            <!--Fila 3-->
+                            <div class="row d-flex align-items-end">
+                                <div class="col-2 col-auto">
+                                    <label class="form-label" for="txtSexo">Genero</label>
+                                    <select class="form-select" id="txtSexo" required>
+                                        <option value="">Elige...</option>
+                                        <option value="M">Masculino</option>
+                                        <option value="F">Femenino</option>
+                                        <option value="NB">No binario</option>
+                                    </select>
+                                </div>
+                                <div class="col-2 col-auto">
+                                    <label class="form-label" for="txtFechaN">Fecha de nacimiento</label>
+                                    <input type="date" id="txtFechaN" class="form-control" required
+                                        placeholder="2007-10-01" min="2005-01-01" max="2019-12-31"
+                                        title="Selecciona tu fecha de nacimiento">
+                                </div>
+                                <div class="col-auto">
+                                    <label class="form-label" for="txtEps">EPS</label>
+                                    <input type="text" id="txtEps" class="form-control" required
+                                        placeholder="Sura, Compensar" pattern="[A-Za-z\s]{5, 15}"
+                                        title="Solo se permiten letras y espacios, máximo 15 caracteres.">
+                                </div>
+                            </div>
+
+                            <!--Fila 4-->
+                            <div class="row">
+                                <div class="col-4 col-auto">
+                                    <label class="form-label" for="txtDireccion">Dirección domicilio</label>
+                                    <input type="text" id="txtDireccion" class="form-control" required
+                                        placeholder="Calle 45 #3g" pattern="^[A-Za-z0-9\s#.-]+$" minlength="15"
+                                        maxlength="100"
+                                        title="Debe ser una dirección válida con letras, números, espacios y algunos caracteres especiales (#, ., -).">
+                                </div>
+                                <div class="col-4 col-auto">
+                                    <label class="form-label" for="txtCelular">Número celular</label>
+                                    <input type="tel" id="txtCelular" class="form-control" required
+                                        placeholder="3245643334" pattern="^\d{10}$" title="Debe contener 10 dígitos.">
+                                </div>
+                                <div class="col-4 col-auto">
+                                    <label class="form-label" for="txtCorreo">Correo Electrónico</label>
+                                    <input type="email" id="txtCorreo" class="form-control" required
+                                        placeholder="example@gmail.com" maxlength="100"
+                                        title="Ingresa un correo electrónico válido.">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg">
+                            <!--Formulario 2-->
+                            <div class="row" id="containerForm2">
+                                <!--Titulos-->
+                                <div class="row text-center text-white">
+                                    <h2><a href="#" class="link-danger">Datos Fisicos</a></h2>
+                                </div>
+
+                                <!--Fila 1-->
+                                <div class="row">
+                                    <div class="col-auto">
+                                        <label class="form-label" for="txtTSangre">Tipo de sangre</label>
+                                        <select id="txtTSangre" class="form-select" required>
+                                            <option value="">Elige...</option>
+                                            <option value="A">A</option>
+                                            <option value="B">B</option>
+                                            <option value="AB">AB</option>
+                                            <option value="O">O</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-auto">
+                                        <label class="form-label" for="txtRh">RH</label>
+                                        <select id="txtRh" class="form-select" required>
+                                            <option value="">Elige...</option>
+                                            <option value="+">+</option>
+                                            <option value="-">-</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <!--Fila 2-->
+                                <div class="row">
+                                    <div class="col-auto">
+                                        <label class="form-label" for="txtAltura">Altura</label>
+                                        <input type="number" id="txtAltura" class="form-control" required
+                                            placeholder="1.64" min="0.50" max="2.50" step="0.01"
+                                            title="Ingresa un valor entre 0.50 y 2.50 metros.">
+                                    </div>
+                                    <div class="col-auto">
+                                        <label class="form-label" for="txtPeso">Peso</label>
+                                        <input type="number" id="txtPeso" class="form-control" required
+                                            placeholder="63.34" min="10" max="100" step="0.01"
+                                            title="Ingresa un valor entre 10 y 100 kg.">
+                                    </div>
+                                    <div class="col-auto">
+                                        <label class="form-label" for="txtTalla">Talla</label>
+                                        <input type="text" id="txtTalla" class="form-control" required
+                                            placeholder="M, L, XS..." pattern="[A-Za-z0-9]{3, 6}"
+                                            title="Solo se permiten letras (e.g., XS, M, L) y numero(1,2,3--)">
+                                    </div>
+                                    <div class="col-auto">
+                                        <label class="form-label" for="txtCalzado">Calzado</label>
+                                        <input type="number" id="txtCalzado" class="form-control" required
+                                            placeholder="38, 40, 35" min="15" max="50"
+                                            title="Ingresa un número entre 15 y 50.">
+                                    </div>
+                                </div>
+
+                                <!--Fila 3-->
+                                <div class="row">
+                                    <div class="col-auto">
+                                        <label class="form-label" for="txtPieD">Pie Dominante</label>
+                                        <select id="txtPieD" class="form-select" required>
+                                            <option value="">Elige...</option>
+                                            <option value="Diestro">Diestro</option>
+                                            <option value="Zurdo">Zurdo</option>
+                                            <option value="Ambidiestro">Ambidiestro</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-auto">
+                                        <label class="form-label" for="txtPosicion">Posición en Cancha</label>
+                                        <select id="txtPosicion" class="form-select" required>
+                                            <option value="">Elige...</option>
+                                            <option value="Portero">Portero</option>
+                                            <option value="Defensa">Defensa</option>
+                                            <option value="MedioCampo">Medio Campo</option>
+                                            <option value="Delantero">Delantero</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!--Formulario 3-->
+                            <div class="row" id="containerForm3">
+                                <!--Titulos-->
+                                <div class="row text-center text-white">
+                                    <h2><a href="#" class="link-danger">Autorizaciones</a></h2>
+                                </div>
+
+                                <!--Fila 1-->
+                                <div class="row d-flex align-items-end">
+                                    <div class="col">
+                                        <label class="form-label" for="fileTratamiento">Autorización tratamiento de
+                                            datos</label>
+                                        <input type="file" class="form-control" id="fileTratamiento"
+                                            accept="application/pdf" required>
+                                        <div id="helpTratamiento" class="form-text">Carga un archivo en formato PDF.
+                                        </div>
+                                    </div>
+
+                                    <div class="col">
+                                        <label class="form-label" for="fileMedica">Autorización Médica</label>
+                                        <input type="file" class="form-control" id="fileMedica" accept="application/pdf"
+                                            required>
+                                        <div id="helpMedica" class="form-text">Carga un archivo en formato PDF.</div>
+                                    </div>
+
+                                    <div class="col">
+                                        <label class="form-label" for="fileEps">Comprobante EPS</label>
+                                        <input type="file" class="form-control" id="fileEps" accept="application/pdf"
+                                            required>
+                                        <div id="helpEps" class="form-text">Carga un archivo en formato PDF.</div>
+                                    </div>
+                                </div>
+
+                                <!--boton de confirmacion-->
+                                <div class="row">
+                                    <div class="col d-flex justify-content-center">
+                                        <button type="submit" id="botonConfirmar" class="btn btn-warning mb-5" style="height: 5      0px;">Enviar
+                                            Formulario de
+                                            Inscripción</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </main>
+    </div>
+
+    <div class="footer d-flex justify-content-center align-items-center" id="piePagina">
+        <h5>&copy; 2024 Club Deportivo Atlético Santander. Todos los derechos reservados.</h5>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        function cerrarSesion() {
+            Swal.fire({
+                text: '¿Estas seguro de ir a la pagina principal?',
+                icon: 'question',
+                showCancelButton: true,
+                confirmButtonColor: '#2a6637',
+                confirmButtonTextColor: '#ffffff ',
+                cancelButtonColor: '#570808 ',
+                confirmButtonText: 'Si, quiero ir.',
+                cancelButtonText: 'No, no quiero quedarme.',
+                timer: 10000,
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    Swal.fire({
+                        title: 'Saliedo',
+                        text: '',
+                        icon: 'success',
+                        showConfirmButton: false,
+                        timer: 1000,
+                        didOpen: () => {
+                            Swal.showLoading();
+                        }
+                    })
+                    setTimeout(() => {
+                        window.location.href = "portada.html";
+                    }, 1000);
+                }
+            })
+        }
+
+        document.getElementById("formInscripcion").addEventListener("submit", function (event) {
+            event.preventDefault();
+            if (formInscripcion.checkValidity()) {
+                Swal.fire({
+                    title: 'Perfecto!!',
+                    text: 'Se ha enviado correctamente el formulario',
+                    icon: 'success',
+                    confirmButtonText: 'Continuar',
+                    showCancelButton: false,
+                    allowOutsideClick: false,
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        Swal.fire({
+                            title: 'Saliedo',
+                            text: '',
+                            icon: 'success',
+                            showConfirmButton: false,
+                            timer: 1000,
+                            didOpen: () => {
+                                Swal.showLoading();
+                            }
+                        })
+                        setTimeout(() => {
+                            window.location.href = "portada.html";
+                        }, 2000);
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>
