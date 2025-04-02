@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>500 - Error Interno del Servidor</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: #5f6368;
+            background-color: #f2f2f2;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .error-icon {
+            font-size: 50px;
+            margin-bottom: 20px;
+        }
+        .message {
+            margin-bottom: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+        }
+        .details {
+            color: #80868b;
+            margin-bottom: 20px;
+        }
+        .reload-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #4285f4;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        .reload-button:hover {
+            background-color: #357ae8;
+        }
+    </style>
+</head>
+<body>
+    <div class="error-icon">☹️</div>
+    <div class="message">Esta página no está funcionando</div>
+    <div class="details">www.modificarMiinformacion.com no puede procesar esta solicitud en este momento.<br>Error HTTP 500</div>
+    <a href="javascript:location.reload()" class="reload-button">Recargar</a>
+</body>
+</html>
