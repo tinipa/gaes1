@@ -11,9 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('eps', function (Blueprint $table) {
-            $table->tinyInteger('id_eps')->primary();
-            $table->string('eps', 15);
+        Schema::create('acudiente', function (Blueprint $table) {
+            $table->integer('id_acudiente')->unsigned()->primary();
+            $table->string('nombres_acu', 20);
+            $table->string('apellidos_acu', 20);
+            $table->bigInteger('telefono_acudiente');
         });
     }
 
@@ -22,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('eps');
+        Schema::dropIfExists('acudiente');
     }
 };

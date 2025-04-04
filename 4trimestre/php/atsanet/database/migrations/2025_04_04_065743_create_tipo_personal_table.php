@@ -11,9 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('eps', function (Blueprint $table) {
-            $table->tinyInteger('id_eps')->primary();
-            $table->string('eps', 15);
+        Schema::create('tipo_personal', function (Blueprint $table) {
+            $table->integer('id_tipo_personal')->unsigned()->primary();
+            $table->string('desc_tipo_personal', 30);
         });
     }
 
@@ -22,6 +22,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('eps');
+        Schema::dropIfExists('tipo_personal');
     }
 };
