@@ -12,6 +12,10 @@ class Eps extends Model
         'id_eps',
         'eps',
     ];
+
+    public function persona()
+    {
+        return $this->hasMany(Persona::class, 'eps_id_eps', 'id_eps');
         
     
 }

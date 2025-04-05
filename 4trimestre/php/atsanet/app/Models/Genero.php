@@ -12,6 +12,11 @@ class Genero extends Model
         'id_genero',
         'genero',
     ];
+
+    public function persona()
+    {
+        return $this->hasMany(Persona::class, 'genero_id_genero', 'id_genero');
+    }
 }
 /*Genero::insert([
     ['id_genero' => 1, 'genero' => 'M'],

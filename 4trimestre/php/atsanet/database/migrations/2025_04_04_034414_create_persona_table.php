@@ -14,12 +14,12 @@ return new class extends Migration
         Schema::create('persona', function (Blueprint $table) {
             $table->integer('id_persona')->unsigned()->primary();
             $table->string('tipoId', 12);
-            $table->string('nombres', 20);
-            $table->string('apellidos', 20);
+            $table->string('nombres', 50);
+            $table->string('apellidos', 50);
             $table->tinyInteger('edad_persona');
-            $table->string('direccion_persona', 20);
+            $table->string('direccion_persona', 100);
             $table->bigInteger('telefono_persona');
-            $table->string('email_persona', 40);
+            $table->string('email_persona', 50);
             //campo foreign de la tabla genero
             $table->tinyInteger('genero_id_genero');
             //campo foreign de la tabla eps
