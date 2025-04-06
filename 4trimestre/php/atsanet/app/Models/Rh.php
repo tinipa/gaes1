@@ -12,6 +12,11 @@ class Rh extends Model
      'id_rh',
      'rh',
  ];
+
+ public function persona()
+    {
+        return $this->hasMany(Persona::class, 'rh_id_rh', 'id_rh');
+    }
 }
 /*Rh::insert([
     ['id_rh' => 1, 'rh' => 'A+'],
