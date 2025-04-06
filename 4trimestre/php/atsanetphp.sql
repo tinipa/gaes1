@@ -19,31 +19,19 @@
 CREATE DATABASE IF NOT EXISTS `atsanetphp` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci */;
 USE `atsanetphp`;
 
--- Volcando estructura para tabla atsanetphp.acudiente
-CREATE TABLE IF NOT EXISTS `acudiente` (
-  `id_acudiente` int(10) unsigned NOT NULL,
-  `nombres_acu` varchar(20) NOT NULL,
-  `apellidos_acu` varchar(20) NOT NULL,
-  `telefono_acudiente` bigint(20) NOT NULL,
-  PRIMARY KEY (`id_acudiente`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
--- Volcando datos para la tabla atsanetphp.acudiente: ~0 rows (aproximadamente)
-DELETE FROM `acudiente`;
-
 -- Volcando estructura para tabla atsanetphp.alumno
 CREATE TABLE IF NOT EXISTS `alumno` (
   `persona_id_persona` int(10) unsigned NOT NULL,
   `pie_dominate` varchar(10) NOT NULL,
-  `acudiente_id_alumno` int(10) unsigned NOT NULL,
+  `nombres_acu` varchar(50) NOT NULL,
+  `apellidos_acu` varchar(50) NOT NULL,
+  `telefono_acu` bigint(20) NOT NULL,
   `parentezco_alumno` varchar(11) NOT NULL,
   `posicion_id_posicion` varchar(6) NOT NULL,
   `categoria_id_categoria` tinyint(3) unsigned NOT NULL,
   KEY `alumno_persona_id_persona_foreign` (`persona_id_persona`),
-  KEY `alumno_acudiente_id_alumno_foreign` (`acudiente_id_alumno`),
   KEY `alumno_posicion_id_posicion_foreign` (`posicion_id_posicion`),
   KEY `alumno_categoria_id_categoria_foreign` (`categoria_id_categoria`),
-  CONSTRAINT `alumno_acudiente_id_alumno_foreign` FOREIGN KEY (`acudiente_id_alumno`) REFERENCES `acudiente` (`id_acudiente`),
   CONSTRAINT `alumno_categoria_id_categoria_foreign` FOREIGN KEY (`categoria_id_categoria`) REFERENCES `categoria` (`id_categoria`),
   CONSTRAINT `alumno_persona_id_persona_foreign` FOREIGN KEY (`persona_id_persona`) REFERENCES `persona` (`id_persona`),
   CONSTRAINT `alumno_posicion_id_posicion_foreign` FOREIGN KEY (`posicion_id_posicion`) REFERENCES `posicion` (`id_posicion`)
@@ -214,10 +202,11 @@ CREATE TABLE IF NOT EXISTS `sessions` (
   KEY `sessions_last_activity_index` (`last_activity`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Volcando datos para la tabla atsanetphp.sessions: ~1 rows (aproximadamente)
+-- Volcando datos para la tabla atsanetphp.sessions: ~2 rows (aproximadamente)
 DELETE FROM `sessions`;
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-	('TlQOMW6aVoaRdCRZnAHQqB8DeAqpeSQ1flRWGzXK', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiaHVOMU5zNUVOOUgzSXBtQ0pCY1JrUW1sa2pzZWpzSHc4ZVRkMHEyUCI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzA6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9wZXJzb25hcyI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1743903946);
+	('2kAUpeE1izlYOMyHLaDbaALkkKs6lr7vCBCwbfVc', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoibldjbXhLdnRVWTVIYlZpQ2hGclZPc2FKZG4yTFFzeFpVM3pEVVhCTiI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzA6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9wZXJzb25hcyI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1743953462),
+	('TlQOMW6aVoaRdCRZnAHQqB8DeAqpeSQ1flRWGzXK', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiaHVOMU5zNUVOOUgzSXBtQ0pCY1JrUW1sa2pzZWpzSHc4ZVRkMHEyUCI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzA6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9wZXJzb25hcyI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1743907827);
 
 -- Volcando estructura para tabla atsanetphp.tipo_personal
 CREATE TABLE IF NOT EXISTS `tipo_personal` (

@@ -36,4 +36,8 @@ class Persona extends Model
     {
         return $this->belongsTo(Rh::class, 'rh_id_rh', 'id_rh');
     }
+    public function alumno()
+    {
+        return $this->hasMany(Alumno::class, 'persona_id_persona', 'id_persona');
+    }
 }
