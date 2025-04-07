@@ -6,7 +6,6 @@
                 <a href="{{ route('alumno.index') }}" class="btn btn-secondary mb-2">Volver</a>
             </div>
 
-    
             <div class="col-md-4">
                 <form action="{{ route('alumno.store') }}" method="POST">
                     @csrf
@@ -80,7 +79,7 @@
                     </select>
 
                     <label for='pie_dominante' class='form-control-label'>Pie dominate</label>
-                    <input type="text" class="form-control" id="pie_dominante" name="pie_dominantepie_dominante" value="">
+                    <input type="text" class="form-control" id="pie_dominante" name="pie_dominante" value="">
                     @error('pie_dominante')
                         <small class="text-danger">{{ $message }}</small><br>
                     @enderror
@@ -105,14 +104,14 @@
                     
                     <label for='parentesco_alumno' class='form-control-label'>Parentezco</label>
                     <input type="text" class="form-control" id="parentesco_alumno" name="parentesco_alumno" value="">
-                    @error('parentesco_alumno')
+                    @error('')
                         <small class="text-danger">{{ $message }}</small><br>
                     @enderror
 
                     <label for='posicion_id_posicion' class='form-control-label'>Posicion</label>
                     <select id="posicion_id_posicion" name="posicion_id_posicion" class="form-control">
                         @foreach($posiciones as $posicion)
-                            <option value="{{ $posicion->id_posicion}}">{{ $posicion->descposicion }}</option>
+                            <option value="{{ $posicion->id_posicion }}">{{ $posicion->descposicion }}</option>
                         @endforeach
                     </select>
 

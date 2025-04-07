@@ -20,7 +20,7 @@ return new class extends Migration
             $table->bigInteger('telefono_acudiente');
             $table->string('parentesco_alumno', 11);
 
-            $table->string('posicion_id_posicion', 6)->unsignednotnull();
+            $table->string('posicion_id_posicion', 6);
             $table->integer('categoria_id_categoria')->unsigned();
 
             //RELACIONES FORANEAS

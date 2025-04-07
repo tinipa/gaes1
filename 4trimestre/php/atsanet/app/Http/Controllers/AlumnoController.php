@@ -34,7 +34,7 @@ class AlumnoController extends Controller
         $posiciones = Posicion::all();
         $categorias = Categoria::all();
         return view('alumno.create', [
-            'personas' => $personas,
+            'persona' => $personas,
             'rhs' => $rhs,
             'generos' => $generos,
             'eps' => $eps,
@@ -71,8 +71,8 @@ class AlumnoController extends Controller
             'posicion_id_posicion' => 'required|exists:posicion,id_posicion',
             'categoria_id_categoria' => 'required|exists:categoria,id'
         ]);
+       
 
-        $persona = $alumnos->persona;
         $persona = Persona::create([
             'id_persona' => $request->id_persona,
             'tipo_id' => $request->tipo_id,
@@ -97,7 +97,7 @@ class AlumnoController extends Controller
             'posicion_id_posicion' => $request->posicion_id_posicion,
             'categoria_id_categoria' => $request->categoria_id_categoria
         ]);
-
+        
         return redirect()->route('alumno.index')->with('success', 'Alumno created successfully.');
     }
 
@@ -114,7 +114,6 @@ class AlumnoController extends Controller
      */
     public function edit(Alumno $alumno)
     {
-        $persona = $alumnos->persona;
         $rhs = Rh::all();
         $generos = Genero::all();
         $eps = Eps::all();
@@ -122,7 +121,7 @@ class AlumnoController extends Controller
         $categorias = Categoria::all();
         return view('alumno.create', [
             'alumno' => $alumno,
-            'persona' => $persona,
+            'personas' => $personas,
             'rhs' => $rhs,
             'generos' => $generos,
             'eps' => $eps,
@@ -151,7 +150,6 @@ class AlumnoController extends Controller
             'rh_id_rh' => 'required|exists:rh,id',
 
             //validaciones de alumno
-            'id_alumno' => 'required|digits_between:6,10',
             'pie_dominante' => 'required|min:5|max:10',
             'nombres_acudiente' => 'required|min:3|max:50',
             'apellidos_acudiente' => 'required|min:3|max:50',
@@ -160,6 +158,7 @@ class AlumnoController extends Controller
             'posicion_id_posicion' => 'required|exists:posicion,id_posicion',
             'categoria_id_categoria' => 'required|exists:categoria,id_categoria'
         ]);
+
 
         $persona->update([
             'id_persona' => $request->id_persona,

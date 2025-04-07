@@ -32,7 +32,7 @@ class Personal_tcontroller extends Controller
         $eps = Eps::all();
         $tipo_personals = Tipo_personal::all();
         return view('personal_t.create', [
-            'personas' => $personas,
+            'persona' => $personas,
             'rhs' => $rhs,
             'generos' => $generos,
             'eps' => $eps,
