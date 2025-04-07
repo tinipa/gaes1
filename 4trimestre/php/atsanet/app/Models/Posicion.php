@@ -8,20 +8,20 @@ class Posicion extends Model
 {
     protected $table = 'posicion';
     protected $primaryKey = 'id_posicion';
+    public $timestamps = false;
     protected $fillable = [
         'id_posicion',
-        'desc_posicion',
-        
+        'descposicion'
     ];
     
 }
 /*Posicion::insert([
-    ['id_posicion' => '1-POR', 'desc_posicion' => 'Portero'],
-    ['id_posicion' => '2-DEL', 'desc_posicion' => 'Delantero Extremo'],
-    ['id_posicion' => '1-DEL', 'desc_posicion' => 'Delantero Central'],
-    ['id_posicion' => '2-DEF', 'desc_posicion' => 'Defensor Lateral'],
-    ['id_posicion' => '1-DEF', 'desc_posicion' => 'Defensor Central'],
-    ['id_posicion' => '2-CEN', 'desc_posicion' => 'Centrocampista Ofensivo'],
-    ['id_posicion' => '1-CEN', 'desc_posicion' => 'Centrocampista Defensivo'],
+    ['id_posicion' => '1-POR', 'descposicion' => 'Portero'],
+    ['id_posicion' => '2-DEL', 'descposicion' => 'Delantero Extremo'],
+    ['id_posicion' => '1-DEL', 'descposicion' => 'Delantero Central'],
+    ['id_posicion' => '2-DEF', 'descposicion' => 'Defensor Lateral'],
+    ['id_posicion' => '1-DEF', 'descposicion' => 'Defensor Central'],
+    ['id_posicion' => '2-CEN', 'descposicion' => 'Centrocampista Ofensivo'],
+    ['id_posicion' => '1-CEN', 'descposicion' => 'Centrocampista Defensivo'],
 ]);*/
 

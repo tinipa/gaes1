@@ -7,25 +7,24 @@ use Illuminate\Database\Eloquent\Model;
 class Rh extends Model
 {
  protected $table = 'rh';
- protected $primaryKey = 'id_rh';  
+ protected $primaryKey = 'id';  
+ public $timestamps = false;
  protected $fillable = [
-     'id_rh',
-     'rh',
+     'descrh'
  ];
 
  public function persona()
     {
-        return $this->hasMany(Persona::class, 'rh_id_rh', 'id_rh');
+        return $this->hasMany(Persona::class, 'rh_id_rh', 'id');
     }
 }
 /*Rh::insert([
-    ['id_rh' => 1, 'rh' => 'A+'],
-    ['id_rh' => 2, 'rh' => 'A-'],
-    ['id_rh' => 3, 'rh' => 'B+'],
-    ['id_rh' => 4, 'rh' => 'B-'],
-    ['id_rh' => 5, 'rh' => 'O+'],
-    ['id_rh' => 6, 'rh' => 'O-'],
-    ['id_rh' => 7, 'rh' => 'AB+'],
-    ['id_rh' => 8, 'rh' => 'AB-'],
-    
+    ['descrh' => 'A+'],
+    ['descrh' => 'A-'],
+    ['descrh' => 'B+'],
+    ['descrh' => 'B-'],
+    ['descrh' => 'O+'],
+    ['descrh' => 'O-'],
+    ['descrh' => 'AB+'],
+    ['descrh' => 'AB-'],
 ]);*/

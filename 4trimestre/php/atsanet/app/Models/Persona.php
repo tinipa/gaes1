@@ -7,7 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class Persona extends Model
 {
     protected $table = 'persona';
-    protected $primaryKey = 'id_persona';   
+    protected $primaryKey = 'id'; 
+    public $timestamps = false;  
     
     protected $fillable = [
         'id_persona',
@@ -22,18 +23,22 @@ class Persona extends Model
         'eps_id_eps',
         'rh_id_rh',
     ];
-    public $timestamps = false;
+    
+    public function alumno(){
+        return $this->hasMany(Alumno::class, 'id', 'id');
+    }
+    public function personal_t(){
+        return $this->hasMany(Personal_t::class, 'id', 'id');
+    }
 
-    public function genero()
-    {
-        return $this->belongsTo(Genero::class, 'genero_id_genero', 'id_genero');
+    
+    public function genero(){
+        return $this->belongsTo(Genero::class, 'genero_id_genero', 'id');
     }
-    public function eps()
-    {
-        return $this->belongsTo(Eps::class, 'eps_id_eps', 'id_eps');
+    public function eps(){
+        return $this->belongsTo(Eps::class, 'eps_id_eps', 'id');
     }
-    public function rh()
-    {
-        return $this->belongsTo(Rh::class, 'rh_id_rh', 'id_rh');
+    public function rh(){
+        return $this->belongsTo(Rh::class, 'rh_id_rh', 'id');
     }
 }

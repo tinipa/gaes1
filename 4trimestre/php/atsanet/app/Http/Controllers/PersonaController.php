@@ -26,11 +26,11 @@ class PersonaController extends Controller
     public function create()
     {
         $generos = Genero::all();
-        $epss = Eps::all();
+        $eps = Eps::all();
         $rhs = Rh::all();
-        return view('personas.create', [
+        return view('personas.create',[
             'generos' => $generos,
-            'epss' => $epss,
+            'eps' => $eps,
             'rhs' => $rhs
         ]);
     }
@@ -47,11 +47,11 @@ class PersonaController extends Controller
             'apellidos' => 'required|min:3|max:50',
             'edad_persona' => 'required|integer|digits_between:1,3',
             'direccion_persona' => 'required|min:10|max:255',
-            'telefono_persona' => 'required|integer|digits:10',
+            'telefono_persona' => 'required|Integer|digits:10',
             'email_persona' => 'required|email',
-            'genero_id_genero' => 'required|exists:genero,id_genero',
-            'eps_id_eps' => 'required|exists:eps,id_eps',
-            'rh_id_rh' => 'required|exists:rh,id_rh'
+            'genero_id_genero' => 'required|exists:genero,id',
+            'eps_id_eps' => 'required|exists:eps,id',
+            'rh_id_rh' => 'required|exists:rh,id'
         ]);
 
         Persona::create($request->all());
@@ -73,12 +73,12 @@ class PersonaController extends Controller
     public function edit(Persona $persona)
     {
         $generos = Genero::all();
-        $epss = Eps::all();
+        $eps = Eps::all();
         $rhs = Rh::all();
         return view('personas.edit', [
             'persona' => $persona,
             'generos' => $generos,
-            'epss' => $epss,
+            'eps' => $eps,
             'rhs' => $rhs
         ]);
     }

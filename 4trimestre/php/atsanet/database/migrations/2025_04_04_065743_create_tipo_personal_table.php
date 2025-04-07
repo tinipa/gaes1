@@ -12,8 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('tipo_personal', function (Blueprint $table) {
-            $table->integer('id_tipo_personal')->unsigned()->primary();
-            $table->string('desc_tipo_personal', 30);
+            $table->increments('id')->unsigned()->primary();
+            $table->string('desctipo_personal', 30);
         });
     }
 

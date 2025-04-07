@@ -7,18 +7,18 @@ use Illuminate\Database\Eloquent\Model;
 class Genero extends Model
 {
     protected $table = 'genero';
-    protected $primaryKey = 'id_genero';  
+    protected $primaryKey = 'id'; 
+    public $timestamps = false;
     protected $fillable = [
-        'id_genero',
-        'genero',
+        'descgenero'
     ];
 
     public function persona()
     {
-        return $this->hasMany(Persona::class, 'genero_id_genero', 'id_genero');
+        return $this->hasMany(Persona::class, 'genero_id_genero', 'id');
     }
 }
 /*Genero::insert([
-    ['id_genero' => 1, 'genero' => 'M'],
-    ['id_genero' => 2, 'genero' => 'F'],    
+    ['descgenero' => 'M'],
+    ['descgenero' => 'F'],    
 ]);*/

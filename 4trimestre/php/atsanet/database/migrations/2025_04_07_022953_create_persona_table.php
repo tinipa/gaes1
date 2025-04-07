@@ -12,7 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('persona', function (Blueprint $table) {
-            $table->integer('id_persona')->unsigned()->primary();
+            $table->increments('id')->unsigned()->primary();
+            $table->integer('id_persona');
             $table->string('tipo_id', 12);
             $table->string('nombres', 50);
             $table->string('apellidos', 50);
@@ -20,19 +21,18 @@ return new class extends Migration
             $table->string('direccion_persona', 100);
             $table->bigInteger('telefono_persona');
             $table->string('email_persona', 50);
-            //campo foreign de la tabla genero
-            $table->tinyInteger('genero_id_genero');
-            //campo foreign de la tabla eps
-            $table->tinyInteger('eps_id_eps');
-            //campo foreign de la tabla rh
-            $table->tinyInteger('rh_id_rh');
 
+            $table->integer('genero_id_genero')->unsigned();
+            $table->integer('eps_id_eps')->unsigned();
+            $table->integer('rh_id_rh')->unsigned();
 
-            $table->foreign('genero_id_genero')->references('id_genero')->on('genero');
-            $table->foreign('eps_id_eps')->references('id_eps')->on('eps');
-            $table->foreign('rh_id_rh')->references('id_rh')->on('rh');
+            //RELACIONES FORANEAS
+            $table->foreign('genero_id_genero')->references('id')->on('genero');
+            $table->foreign('eps_id_eps')->references('id')->on('eps');
+            $table->foreign('rh_id_rh')->references('id')->on('rh');
         });
     }
+
 
     /**
      * Reverse the migrations.
