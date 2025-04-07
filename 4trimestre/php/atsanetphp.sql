@@ -197,7 +197,7 @@ CREATE TABLE `persona` (
   CONSTRAINT `persona_eps_id_eps_foreign` FOREIGN KEY (`eps_id_eps`) REFERENCES `eps` (`id`),
   CONSTRAINT `persona_genero_id_genero_foreign` FOREIGN KEY (`genero_id_genero`) REFERENCES `genero` (`id`),
   CONSTRAINT `persona_rh_id_rh_foreign` FOREIGN KEY (`rh_id_rh`) REFERENCES `rh` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -206,7 +206,7 @@ CREATE TABLE `persona` (
 
 LOCK TABLES `persona` WRITE;
 /*!40000 ALTER TABLE `persona` DISABLE KEYS */;
-INSERT INTO `persona` VALUES (5,1028662497,'CC','Nicol','martinez',18,'Cll 45d sur 3g este',3224461312,'nicolmartinezforero12@gmailcom',2,1,1);
+INSERT INTO `persona` VALUES (16,1034466598,'CC','Nicol','martinez',18,'Cll 45d sur 3g este',3224461312,'nicolmartinezforero12@gmailcom',1,1,1),(17,1028662497,'TI','Nicol','martinez',18,'Cll 45d sur 3g este',3224461312,'nicolmartinezforero12@gmailcom',1,1,1);
 /*!40000 ALTER TABLE `persona` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -234,7 +234,7 @@ CREATE TABLE `personal_t` (
 
 LOCK TABLES `personal_t` WRITE;
 /*!40000 ALTER TABLE `personal_t` DISABLE KEYS */;
-INSERT INTO `personal_t` VALUES (5,'12345678',2);
+INSERT INTO `personal_t` VALUES (16,'12345678',1);
 /*!40000 ALTER TABLE `personal_t` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -312,7 +312,7 @@ CREATE TABLE `sessions` (
 
 LOCK TABLES `sessions` WRITE;
 /*!40000 ALTER TABLE `sessions` DISABLE KEYS */;
-INSERT INTO `sessions` VALUES ('Hbwa7J379Ct3JzPz9QqpWPtXSuo9C30mSE7aRjOx',NULL,'127.0.0.1','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36','YTozOntzOjY6Il90b2tlbiI7czo0MDoiU2hsOW15aDdYbjhJUmE4MTRqZTY3OWs3Ym1la0tEOGJ1djhwRGN1ZSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzI6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9wZXJzb25hbF90Ijt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==',1744015639);
+INSERT INTO `sessions` VALUES ('6BeiCv8aegTU8IpJiCSoSXnZpc2IwgihThjFABOQ',NULL,'127.0.0.1','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36','YTozOntzOjY6Il90b2tlbiI7czo0MDoicHB4c1Q3ZkJmZmtveEhyQ1ZMM2c3YkJTeHR4aERWdHYzbzdkNDk4SSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzU6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9hbHVtbm8vY3JlYXRlIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==',1744059009),('Hbwa7J379Ct3JzPz9QqpWPtXSuo9C30mSE7aRjOx',NULL,'127.0.0.1','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36','YTozOntzOjY6Il90b2tlbiI7czo0MDoiU2hsOW15aDdYbjhJUmE4MTRqZTY3OWs3Ym1la0tEOGJ1djhwRGN1ZSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzI6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9wZXJzb25hbF90Ijt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==',1744015639);
 /*!40000 ALTER TABLE `sessions` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -349,4 +349,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-04-07  3:49:45
+-- Dump completed on 2025-04-07 15:52:57
