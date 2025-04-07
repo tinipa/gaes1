@@ -15,9 +15,8 @@ return new class extends Migration
             //campo foreign de la tabla persona
             $table->integer('persona_id_persona')->unsigned();
             $table->string('pie_dominate', 10);
-            $table->string('nombres_acu', 50);
-            $table->string('apellidos_acu', 50);
-            $table->bigInteger('telefono_acudiente');
+             //campo foreign de la tabla acudiente
+            $table->integer('acudiente_id_alumno')->unsigned();
             $table->string('parentezco_alumno', 11);
              //campo foreign de la tabla posicion
             $table->string('posicion_id_posicion', 6);
@@ -27,7 +26,7 @@ return new class extends Migration
 
             //RELACIONES FORANEAS
             $table->foreign('persona_id_persona')->references('id_persona')->on('persona');
-            
+            $table->foreign('acudiente_id_alumno')->references('id_acudiente')->on('acudiente');
             $table->foreign('posicion_id_posicion')->references('id_posicion')->on('posicion');
             $table->foreign('categoria_id_categoria')->references('id_categoria')->on('categoria');
         });
