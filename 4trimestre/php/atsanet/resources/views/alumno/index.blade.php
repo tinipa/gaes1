@@ -58,8 +58,8 @@
                             <td>{{ $alumno->categoria->desccategoria }}</td>
 
                             <td class="text-center">
-                                <a href="{{ route('alumnos.edit', $alumno) }}" class="btn btn-success">Editar</a>
-                                <form action="{{ route('alumnos.destroy', $alumno) }}" method="POST" class="d-inline-block">
+                                <a href="{{ route('alumno.edit', $alumno) }}" class="btn btn-success">Editar</a>
+                                <form action="{{ route('alumno.destroy', $alumno) }}" method="POST" class="d-inline-block">
                                     @csrf
                                     @method('DELETE')
                                     <button class ="btn btn-danger"

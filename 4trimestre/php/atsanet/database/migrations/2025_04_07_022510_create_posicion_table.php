@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('posicion', function (Blueprint $table) {
-            $table->string('id_posicion',6)->unsignednotnull()->primary();
+            $table->increments('id_posicion')->unsigned()->primary();
             $table->string('descposicion', 50);
         });
     }

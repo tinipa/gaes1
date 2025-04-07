@@ -27,9 +27,9 @@ CREATE TABLE `alumno` (
   `pie_dominante` varchar(10) NOT NULL,
   `nombres_acudiente` varchar(20) NOT NULL,
   `apellidos_acudiente` varchar(20) NOT NULL,
-  `telefono_acudiente` bigint(10) NOT NULL,
+  `telefono_acudiente` bigint(20) NOT NULL,
   `parentesco_alumno` varchar(11) NOT NULL,
-  `posicion_id_posicion` varchar(6) NOT NULL,
+  `posicion_id_posicion` int(10) unsigned NOT NULL,
   `categoria_id_categoria` int(10) unsigned NOT NULL,
   PRIMARY KEY (`id`),
   KEY `alumno_posicion_id_posicion_foreign` (`posicion_id_posicion`),
@@ -46,6 +46,7 @@ CREATE TABLE `alumno` (
 
 LOCK TABLES `alumno` WRITE;
 /*!40000 ALTER TABLE `alumno` DISABLE KEYS */;
+INSERT INTO `alumno` VALUES (1,'derecho','Nicol','martinez',3224461312,'padre',4,1),(2,'derecho','Nicol','martinez',3224461312,'padre',4,1);
 /*!40000 ALTER TABLE `alumno` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -185,7 +186,7 @@ CREATE TABLE `persona` (
   `apellidos` varchar(50) NOT NULL,
   `edad_persona` tinyint(4) NOT NULL,
   `direccion_persona` varchar(100) NOT NULL,
-  `telefono_persona` bigint(10) NOT NULL,
+  `telefono_persona` bigint(20) NOT NULL,
   `email_persona` varchar(50) NOT NULL,
   `genero_id_genero` int(10) unsigned NOT NULL,
   `eps_id_eps` int(10) unsigned NOT NULL,
@@ -197,7 +198,7 @@ CREATE TABLE `persona` (
   CONSTRAINT `persona_eps_id_eps_foreign` FOREIGN KEY (`eps_id_eps`) REFERENCES `eps` (`id`),
   CONSTRAINT `persona_genero_id_genero_foreign` FOREIGN KEY (`genero_id_genero`) REFERENCES `genero` (`id`),
   CONSTRAINT `persona_rh_id_rh_foreign` FOREIGN KEY (`rh_id_rh`) REFERENCES `rh` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -206,7 +207,7 @@ CREATE TABLE `persona` (
 
 LOCK TABLES `persona` WRITE;
 /*!40000 ALTER TABLE `persona` DISABLE KEYS */;
-INSERT INTO `persona` VALUES (16,1034466598,'CC','Nicol','martinez',18,'Cll 45d sur 3g este',3224461312,'nicolmartinezforero12@gmailcom',1,1,1),(17,1028662497,'TI','Nicol','martinez',18,'Cll 45d sur 3g este',3224461312,'nicolmartinezforero12@gmailcom',1,1,1);
+INSERT INTO `persona` VALUES (1,1034466598,'CC','Nicol','martinez',34,'Cll 45d sur 3g este',3224461312,'nicolmartinezforero12@gmailcom',1,1,1),(2,99999999,'TI','Nicol','martinez',18,'Cll 45d sur 3g este',3224461312,'nicolmartinezforero12@gmailcom',2,1,3);
 /*!40000 ALTER TABLE `persona` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -234,7 +235,6 @@ CREATE TABLE `personal_t` (
 
 LOCK TABLES `personal_t` WRITE;
 /*!40000 ALTER TABLE `personal_t` DISABLE KEYS */;
-INSERT INTO `personal_t` VALUES (16,'12345678',1);
 /*!40000 ALTER TABLE `personal_t` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -246,10 +246,10 @@ DROP TABLE IF EXISTS `posicion`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `posicion` (
-  `id_posicion` varchar(6) NOT NULL,
+  `id_posicion` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `descposicion` varchar(50) NOT NULL,
   PRIMARY KEY (`id_posicion`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -258,7 +258,7 @@ CREATE TABLE `posicion` (
 
 LOCK TABLES `posicion` WRITE;
 /*!40000 ALTER TABLE `posicion` DISABLE KEYS */;
-INSERT INTO `posicion` VALUES ('1-CEN','Centrocampista Defensivo'),('1-DEF','Defensor Central'),('1-DEL','Delantero Central'),('1-POR','Portero'),('2-CEN','Centrocampista Ofensivo'),('2-DEF','Defensor Lateral'),('2-DEL','Delantero Extremo');
+INSERT INTO `posicion` VALUES (1,'Portero'),(2,'Delantero Extremo'),(3,'Delantero Central'),(4,'Defensor Lateral'),(5,'Defensor Central'),(6,'Centrocampista Ofensivo'),(7,'Centrocampista Defensivo');
 /*!40000 ALTER TABLE `posicion` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -312,7 +312,7 @@ CREATE TABLE `sessions` (
 
 LOCK TABLES `sessions` WRITE;
 /*!40000 ALTER TABLE `sessions` DISABLE KEYS */;
-INSERT INTO `sessions` VALUES ('6BeiCv8aegTU8IpJiCSoSXnZpc2IwgihThjFABOQ',NULL,'127.0.0.1','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36','YTozOntzOjY6Il90b2tlbiI7czo0MDoicHB4c1Q3ZkJmZmtveEhyQ1ZMM2c3YkJTeHR4aERWdHYzbzdkNDk4SSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzU6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9hbHVtbm8vY3JlYXRlIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==',1744059009),('Hbwa7J379Ct3JzPz9QqpWPtXSuo9C30mSE7aRjOx',NULL,'127.0.0.1','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36','YTozOntzOjY6Il90b2tlbiI7czo0MDoiU2hsOW15aDdYbjhJUmE4MTRqZTY3OWs3Ym1la0tEOGJ1djhwRGN1ZSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzI6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9wZXJzb25hbF90Ijt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==',1744015639);
+INSERT INTO `sessions` VALUES ('6BeiCv8aegTU8IpJiCSoSXnZpc2IwgihThjFABOQ',NULL,'127.0.0.1','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36','YTozOntzOjY6Il90b2tlbiI7czo0MDoiZDJBeHZwWnlxcHZuWDEwQWZNVWRBZnNJOGdsM2JqWXkzYTFWV3BJaSI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6Mjg6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9hbHVtbm8iO319',1744060189);
 /*!40000 ALTER TABLE `sessions` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -349,4 +349,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-04-07 15:52:57
+-- Dump completed on 2025-04-07 16:15:03

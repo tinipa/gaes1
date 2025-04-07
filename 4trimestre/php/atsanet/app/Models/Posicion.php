@@ -16,12 +16,12 @@ class Posicion extends Model
     
 }
 /*Posicion::insert([
-    ['id_posicion' => '1-POR', 'descposicion' => 'Portero'],
-    ['id_posicion' => '2-DEL', 'descposicion' => 'Delantero Extremo'],
-    ['id_posicion' => '1-DEL', 'descposicion' => 'Delantero Central'],
-    ['id_posicion' => '2-DEF', 'descposicion' => 'Defensor Lateral'],
-    ['id_posicion' => '1-DEF', 'descposicion' => 'Defensor Central'],
-    ['id_posicion' => '2-CEN', 'descposicion' => 'Centrocampista Ofensivo'],
-    ['id_posicion' => '1-CEN', 'descposicion' => 'Centrocampista Defensivo'],
+    ['descposicion' => 'Portero'],
+    ['descposicion' => 'Delantero Extremo'],
+    ['descposicion' => 'Delantero Central'],
+    ['descposicion' => 'Defensor Lateral'],
+    ['descposicion' => 'Defensor Central'],
+    ['descposicion' => 'Centrocampista Ofensivo'],
+    ['descposicion' => 'Centrocampista Defensivo'],
 ]);*/
 
