@@ -105,14 +105,14 @@
                     
                     <label for='parentesco_alumno' class='form-control-label'>Parentezco</label>
                     <input type="text" class="form-control" id="parentesco_alumno" name="parentesco_alumno" value="">
-                    @error('')
+                    @error('parentesco_alumno')
                         <small class="text-danger">{{ $message }}</small><br>
                     @enderror
 
                     <label for='posicion_id_posicion' class='form-control-label'>Posicion</label>
                     <select id="posicion_id_posicion" name="posicion_id_posicion" class="form-control">
                         @foreach($posiciones as $posicion)
-                            <option value="{{ $posicion->id_posicion }}">{{ $posicion->descposicion }}</option>
+                            <option value="{{ $posicion->id_posicion}}">{{ $posicion->descposicion }}</option>
                         @endforeach
                     </select>
 

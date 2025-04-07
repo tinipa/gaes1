@@ -36,8 +36,8 @@
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="{{route('personal_t.index')}}">Personal Técnico</a>
-                            <a class="nav-link" href="{{route('alumno.index')}}">Alumno</a>
+                            <a class="nav-link" href="{{route('personal_t.index')}}">Personas</a>
+                            <a class="nav-link" href="{{route('alumno.index')}}">Personas</a>
                         </li>
                     </ul>
                 </div>

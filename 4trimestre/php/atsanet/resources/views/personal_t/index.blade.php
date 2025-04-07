@@ -3,7 +3,7 @@
     <div class="container">
         <div class ="row">
             <div class="col-md-12">
-                <h2 class="text-success">Personal Técnico</h2>
+                <h2 class="text-success">CRUD Personas</h2>
                 <a href="{{ route('personal_t.create') }}" class="btn btn-primary mb-2">Añadir Persona</a> 
             </div>              
         </div>
@@ -23,7 +23,7 @@
                         <th>Genero</th>
                         <th>Eps</th>
                         <th>Rh</th>
-                        
+                        <th>Contraseña</th>
                         <th>Tipo de personal</th>
                         <thstyle="width: 30%;">Opciones</th>
                     </tr>                     
@@ -43,7 +43,7 @@
                             <td>{{ $personal_t->persona->genero->descgenero }}</td>
                             <td>{{ $personal_t->persona->eps->desceps }}</td>
                             <td>{{ $personal_t->persona->rh->descrh }}</td>
-                            
+                            <td>{{ $personal_t->password }}</td>
                             <td>{{ $personal_t->tipo_personal->desctipo_personal }}</td>
 
 

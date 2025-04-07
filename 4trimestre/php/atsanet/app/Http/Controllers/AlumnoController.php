@@ -72,6 +72,7 @@ class AlumnoController extends Controller
             'categoria_id_categoria' => 'required|exists:categoria,id'
         ]);
 
+        $persona = $alumnos->persona;
         $persona = Persona::create([
             'id_persona' => $request->id_persona,
             'tipo_id' => $request->tipo_id,
@@ -113,6 +114,7 @@ class AlumnoController extends Controller
      */
     public function edit(Alumno $alumno)
     {
+        $persona = $alumnos->persona;
         $rhs = Rh::all();
         $generos = Genero::all();
         $eps = Eps::all();
@@ -120,7 +122,7 @@ class AlumnoController extends Controller
         $categorias = Categoria::all();
         return view('alumno.create', [
             'alumno' => $alumno,
-            'personas' => $personas,
+            'persona' => $persona,
             'rhs' => $rhs,
             'generos' => $generos,
             'eps' => $eps,
