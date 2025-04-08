@@ -2,8 +2,9 @@
 @section('content')
     <div class="container">
         <div class ="row">
+
             <div class="col-md-12">
-                <h2 class="text-success">CRUD Personas</h2>
+                <h2 class="text-success">Alumnos</h2>
                 <a href="{{ route('alumno.create') }}" class="btn btn-primary mb-2">Añadir Persona</a> 
             </div>              
         </div>
