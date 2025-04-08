@@ -114,14 +114,15 @@ class AlumnoController extends Controller
      */
     public function edit(Alumno $alumno)
     {
+        $persona = $alumno->persona;
         $rhs = Rh::all();
         $generos = Genero::all();
         $eps = Eps::all();
         $posiciones = Posicion::all();
         $categorias = Categoria::all();
-        return view('alumno.create', [
+        return view('alumno.edit', [
             'alumno' => $alumno,
-            'personas' => $personas,
+            'persona' => $persona,
             'rhs' => $rhs,
             'generos' => $generos,
             'eps' => $eps,
@@ -135,7 +136,7 @@ class AlumnoController extends Controller
      */
     public function update(Request $request, Alumno $alumno)
     {
-        $required->vaidate([
+        $request->validate([
             //validaciones de persona
             'id_persona' => 'required|digits_between:6,10',
             'tipo_id' => 'required|min:2|max:3',
@@ -156,10 +157,11 @@ class AlumnoController extends Controller
             'telefono_acudiente' => 'required|integer|digits:10',
             'parentesco_alumno' => 'required|min:3|max:11',
             'posicion_id_posicion' => 'required|exists:posicion,id_posicion',
-            'categoria_id_categoria' => 'required|exists:categoria,id_categoria'
+            'categoria_id_categoria' => 'required|exists:categoria,id'
         ]);
 
 
+        $persona = $alumno->persona;
         $persona->update([
             'id_persona' => $request->id_persona,
             'tipo_id' => $request->tipo_id,

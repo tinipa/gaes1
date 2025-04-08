@@ -3,10 +3,10 @@
     <div class="container">
         <div class ="row">
             <div class="col-md-12">
-                <a href="{{ route('personal_t.index') }}" class="btn btn-secondary mb-2">Volver</a>
+                <a href="{{ route('alumno.index') }}" class="btn btn-secondary mb-2">Volver</a>
             </div>
             <div class="col-md-4">
-                <form action="{{ route('personal_t.update', $personal_t) }}" method="POST">
+                <form action="{{ route('alumno.update', $alumno) }}" method="POST">
                     @csrf
                     @method('PUT')
                     <label for="id_persona" class="form-control-label">Numero de identificacion</label>
@@ -58,36 +58,67 @@
                     @enderror
 
                     <label for="genero_id_genero" class="form-control-label">Genero</label>
-                    <select id="genero_id_genero" name="genero_id_genero" class="form-control" value="{{$persona->genero_id_genero}}">
+                    <select id="genero_id_genero" name="genero_id_genero" class="form-control">
                         @foreach($generos as $genero)
-                            <option value="{{ $genero->id_genero }}" {{$persona->genero_id_genero == $genero->id_genero ? 'selected' : ''}}>{{ $genero->genero }}</option>
+                            <option value="{{ $genero->id }}" {{$persona->genero_id_genero == $genero->id ? 'selected' : ''}}>{{ $genero->descgenero }}</option>
                         @endforeach
                     </select>
 
                     <label for="eps_id_eps" class="form-control-label">Eps</label>
-                    <select id="eps_id_eps" name="eps_id_eps" class="form-control" value="{{$persona->eps_id_eps}}">
-                        @foreach($epss as $eps)
-                            <option value="{{ $eps->id_eps }}"{{$persona->eps_id_eps == $eps->id_eps ? 'selected' : ''}}>{{ $eps->eps }}</option>
+                    <select id="eps_id_eps" name="eps_id_eps" class="form-control">
+                        @foreach($eps as $eps)
+                            <option value="{{ $eps->id }}"{{$persona->eps_id_eps == $eps->id ? 'selected' : ''}}>{{ $eps->desceps }}</option>
                         @endforeach
                     </select>
 
                     <label for="rh_id_rh" class="form-control-label">Rh</label>
-                    <select id="rh" name="rh_id_rh" class="form-control" value="{{$persona->rh_id_rh}}">
+                    <select id="rh" name="rh_id_rh" class="form-control">
                         @foreach($rhs as $rh)
-                            <option value="{{ $rh->id_rh }}"{{$persona->rh_id_rh == $rh->id_rh ? 'selected' : ''}}>{{ $rh->rh }}</option>
+                            <option value="{{ $rh->id }}"{{$persona->rh_id_rh == $rh->id ? 'selected' : ''}}>{{ $rh->descrh }}</option>
                         @endforeach
                     </select>
 
-                    <label for='password' class="form-control-label">Contraseña</label>
-                    <input type="password" class="form-control" id="password" name="password" value="">
-                    @error('password')
+                    <label for="pie_dominante" class="form-control-label">Correo</label>
+                    <input type="text" class="form-control" id="pie_dominante" name="pie_dominante" value="{{$alumno->pie_dominante}}">
+                    @error('pie_dominante')
                         <small class="text-danger">{{ $message }}</small><br>
                     @enderror
 
-                    <label for="tipo_personal_fk" class='form-control-label'>Tipo personal</label>
-                    <select id='tipo_personal_fk' name='tipo_personal_fk' class='form-control'>
-                        @foreach($tipo_personals as $tipo_personal)
-                            <option value="{{ $tipo_personal->id }}">{{ $tipo_personal->desctipo_personal }}</option>
+                    <label for="nombres_acudiente" class="form-control-label">Correo</label>
+                    <input type="text" class="form-control" id="nombres_acudiente" name="nombres_acudiente" value="{{$alumno->nombres_acudiente}}">
+                    @error('nombres_acudiente')
+                        <small class="text-danger">{{ $message }}</small><br>
+                    @enderror
+
+                    <label for="apellidos_acudiente" class="form-control-label">Correo</label>
+                    <input type="text" class="form-control" id="apellidos_acudiente" name="apellidos_acudiente" value="{{$alumno->apellidos_acudiente}}">
+                    @error('apellidos_acudiente')
+                        <small class="text-danger">{{ $message }}</small><br>
+                    @enderror
+
+                    <label for="telefono_acudiente" class="form-control-label">Correo</label>
+                    <input type="text" class="form-control" id="telefono_acudiente" name="telefono_acudiente" value="{{$alumno->telefono_acudiente}}">
+                    @error('telefono_acudiente')
+                        <small class="text-danger">{{ $message }}</small><br>
+                    @enderror
+
+                    <label for="parentesco_alumno" class="form-control-label">Correo</label>
+                    <input type="text" class="form-control" id="parentesco_alumno" name="parentesco_alumno" value="{{$alumno->parentesco_alumno}}">
+                    @error('parentesco_alumno')
+                        <small class="text-danger">{{ $message }}</small><br>
+                    @enderror
+
+                    <label for="posicion_id_posicion" class="form-control-label">Rh</label>
+                    <select id="rh" name="posicion_id_posicion" class="form-control">
+                        @foreach($posiciones as $posicione)
+                            <option value="{{ $posicione->id_posicion }}" {{ $alumno->posicion_id_posicion == $posicione->id_posicion ? 'selected' : '' }}>{{ $posicione->descposicion }}</option>
+                        @endforeach
+                    </select>
+
+                    <label for="categoria_id_categoria" class="form-control-label">Categoria</label>
+                    <select id="categoria_id_categoria" name="categoria_id_categoria" class="form-control">
+                        @foreach($categorias as $categoria)
+                            <option value="{{ $categoria->id }}" {{ $alumno->categoria_id_categoria == $categoria->id ? 'selected' : '' }}>{{ $categoria->desccategoria }}</option>
                         @endforeach
                     </select>
 
